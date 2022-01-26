@@ -40,15 +40,18 @@ public static void setTheMaxCapacityOfEachTruck() {
         }
     }
 }
+
+
 //Algorithm 3: Get Actual load of each truck
 public static void setTheLoadOfEachTruck() {
-	Scanner scan = new Scanner(System.in);
-	for(int index = 0; index < numTrucks; index++) {
-		System.out.println("Please enter the actual load of each truck "+(index+1)+".");
-		double size = scan.nextDouble();
-		loadOfEachTruck[index] = size;
+Scanner scan = new Scanner(System.in);
+for(int index = 0; index < numTrucks; index++) {
+System.out.println("Please enter the load for each truck "+(index+1)+ "; small max of 10 and large max of 100");
+double size = scan.nextDouble();
+loadOfEachTruck[index] = size;
 	}
 }
+  
 //Algorithm 4: Calculate the % of load capacity of each truck
 public static double[] calcPercentageOfLoad() {
     double[] percOfLoad = new double[numTrucks];
@@ -68,11 +71,8 @@ public static String displayTruckInfo(double[] percOfLoad) {
     return out;
 }
 
-
-
-
 //OUTPUT
-//main method for calling methods
+//main method for calling the methods
 public static void main(String[] args) {
 	TomsTrucking.setNumOfTrucksForTheDay();
 	TomsTrucking.setTheMaxCapacityOfEachTruck();
